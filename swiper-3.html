@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="swiper-3.4.2.min.css">
+    <style>
+      .swiper-container {
+        width: 100%;
+        height: 3rem;
+      }
+      /* .swiper-scrollbar{
+        margin-bottom: -50px;
+        background-color: red;
+      } */
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script>   
+(function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script> 
+</head>
+<body>
+    <div class="swiper-container" id="swiper-container1">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="image/p2500890954.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="image/p2423846417.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="image/p2389238535.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="image/p2502185773.jpg" alt=""></div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <!-- <div class="swiper-pagination"></div> -->
+      
+      <!-- 如果需要导航按钮 -->
+      <!-- <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
+      
+      <!-- 如果需要滚动条 -->
+      <div class="swiper-scrollbar"></div>  
+    </div>
+
+    <script src="swiper-3.4.2.min.js"></script>
+    <script>        
+    var mySwiper = new Swiper('#swiper-container1',{
+      followFinger : false,
+    })
+    </script>
+</body>
+</html>
